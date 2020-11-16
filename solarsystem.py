@@ -6,17 +6,15 @@ from pygame.draw import *
 FPS = 50
 WIDTH = HEIGHT = 900
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-YELLOW = (255, 215, 0)
-GREEN = (0, 255, 0)
-MAGENTA = (255, 0, 255)
-PINK = (255, 105, 180)
-KHAKI = (240, 230, 140)
-CYAN = (0, 255, 255)
-SIENNA = (160, 82, 45)
+red = (255, 0, 0)
+blue = (0, 0, 255)
+yellow = (255, 215, 0)
+green = (0, 255, 0)
+orange = (255, 0, 255)
+white = (255, 105, 180)
+gray = (240, 230, 140)
 BLACK = (0, 0, 0)
-COLORS = [RED, BLUE, YELLOW, GREEN, MAGENTA, PINK, KHAKI, CYAN, SIENNA, BLACK]
+COLORS = [red, blue, yellow, green, orange, white, gray, BLACK]
 X0=WIDTH/2
 Y0=HEIGHT/2
 A = 149.6*10**9
@@ -97,11 +95,6 @@ def draw(obj, scale):
 	circle(screen, obj.color, screen_coords, obj.r)
 
 
-def make_sun(M0):
-	sun = Planet(0, 0, 0, 0, YELLOW, 20)
-	sun.m = M0
-	return sun
-
 def gravitate(obj1, obj2, dt=1):
 	R = sqrt((obj1.x - obj2.x)**2 + (obj1.y - obj2.y)**2)
 	print(obj1.x, obj2.x)	
@@ -124,9 +117,8 @@ M0 = 2*10**30
 CRASH_DIST = 10
 DT = 3600*24*3
 
-Sun = make_sun(M0) 
+
 planets = []
-planets.append(Sun)
 for i in range(flag_obj):
 	x = x_planet[i]
 	y = y_planet[i]   
