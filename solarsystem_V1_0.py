@@ -161,6 +161,12 @@ while not finished:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			finished = True
+						
+	keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+                DT -= delta
+        if keys[pygame.K_RIGHT]:
+                DT += delta
 
 	i = 0
 	while i < len(planets):
